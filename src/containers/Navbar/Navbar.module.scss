@@ -1,0 +1,118 @@
+@import "../../variables.scss";
+
+
+
+// nav {
+//     background-color: $primary-color;
+// }
+
+.navbar {
+    // background-color: $primary-color;
+    // display: flex;
+    // height: 90px;
+    // justify-content: space-between;
+    width: 100%;
+    
+    img {
+        display: block;
+        // height: 45px;
+        // margin-bottom: 45px;
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    ul {
+        list-style: none;
+        // margin-top: 15px;
+        padding: 0;
+    }
+
+    .navSecondary {
+        align-items: center;
+        background-color: black;
+        // color: white;
+        // display: flex;
+        height: 36px;
+        // margin-bottom: 36px;
+        padding: $base-spacing/2 $base-spacing;
+        position: relative;
+        z-index: 1000;
+
+        .burgerIcon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 15px;
+            // padding-bottom: $base-spacing;
+            position: relative;
+            top: $base-spacing*.75;
+            width: 20px;
+            
+            span {
+                transition: $transition-speed ease-in-out;
+                background-color: white;
+                border-radius: $base-spacing;
+                display: block;
+                top: 0;
+                height: 2px;
+                position: absolute;
+                transform: rotate(0deg) translate(0px);
+                width: 20px;
+            }
+
+            span:nth-child(2) {
+                top: 7.5px;
+            }
+
+            span:nth-child(3) {
+                top: 15px;
+            }
+
+            span.navCross:nth-child(1) {
+                top: 7.5px;
+                transform: rotate(135deg);
+            }
+
+            span.navCross:nth-child(2) {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            span.navCross:nth-child(3) {
+                top: 7.5px;
+                transform: rotate(-135deg);
+            }
+        }
+
+    }
+
+    .navLinkBar {
+        background-color: black;
+        transition: 500ms ease-in-out;
+
+        .navItemCont {    
+            cursor: pointer;
+            display: flex;
+            height: 30px;
+            line-height: 30px;
+            justify-content: space-between;
+            padding: 0 $base-spacing;
+            width: 100%;
+
+            .arrowRight {
+                color: white;
+            }
+
+            .navItem {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .navLinksOpen {
+        padding: 0 $base-spacing $base-spacing;        
+    }
+}
