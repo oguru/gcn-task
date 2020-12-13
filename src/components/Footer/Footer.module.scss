@@ -4,17 +4,44 @@
     background-color: black;
     bottom: 0;
     color: white;
-    padding: 0.5*$base-spacing $base-spacing;
+    padding: 0.5*$base-spacing $base-spacing*2;
     position: absolute;
     width: 100%;
 
+    p {
+        font-size: 12px;
+        display: block;
+    }
+
     .footerTop {
+        align-items: center;
         display: flex;
         justify-content: space-between;
+
+
 
         .gcnLogo {
             height: 40px;
             width: 100px;
         }
+    }
+    .footerBot {
+        .footerLinks {
+            display: flex;
+            border-top: solid 1px rgba(255, 255, 255, 1);
+            padding: $base-spacing 0;
+            justify-content: space-between;
+            width: 100%;
+        
+            // justify-content: space-between;
+
+            .footerCol {
+                // width: 50%;
+            }
+        }
+    }
+
+    .flexRow {
+        display: flex;
     }
 }

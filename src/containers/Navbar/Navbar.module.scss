@@ -90,19 +90,58 @@
 
     .navLinkBar {
         background-color: black;
+        display: flex;
+        position: absolute;
         transition: 500ms ease-in-out;
+        width: 100%;
+
+        .arrowCont {
+            cursor: pointer;
+            height: 100%;
+            padding-right: $base-spacing;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        .navArrow {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: $base-spacing;
+            height: 30px;
+            // width: 30px;
+
+            svg {
+               height: 20px;
+               width: 20px; 
+            }
+        }
+
+        ul {
+            flex-grow: 1;
+        }
 
         .navItemCont {    
             cursor: pointer;
             display: flex;
+            flex-grow: 1;
             height: 30px;
-            line-height: 30px;
+            line-height: 28px;
             justify-content: space-between;
             padding: 0 $base-spacing;
+            transition-duration: 200ms;
             width: 100%;
 
-            .arrowRight {
-                color: white;
+            // .arrowRight {
+            //     color: white;
+            //     @include arrowStyle
+            // }
+
+            &:hover {
+                background-color: $primary-color;
             }
 
             .navItem {

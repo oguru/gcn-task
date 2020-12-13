@@ -8,10 +8,11 @@ import PropTypes from 'prop-types';
 import gcnNavTop from "../../assets/GCNNavTop.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = (props) => {
 
-  // const [navLinkVisibility, toggleNavLinks] = useState(false);
+  // const [navLinkVisibility, toggleNavOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(0);
   const [navOpen, setNavOpen] = useState(false);
@@ -88,7 +89,7 @@ const calcHeight = () => {
       return (
         <li onClick={() => changeNav(link.name)} className={styles.navItemCont}>
           <p className={styles.navItem}>{link.name}</p>
-          <span className={styles.arrowRight}>
+          <span className={styles.navArrow}>
             <FontAwesomeIcon icon={faAngleRight}/>
           </span>
         </li>
@@ -98,7 +99,7 @@ const calcHeight = () => {
       <li className={styles.navItemCont}>
         <Link
           className={styles.navItem}
-          onClick={() => toggleNavLinks()}
+          onClick={() => setNavOpen(false)}
           key={link.name}
           // getProps={isActive}
           to={link.path}
@@ -110,53 +111,29 @@ const calcHeight = () => {
     );
   };
 
-  const toggleNavLinks = () => {
+  const toggleNavOpen = () => {
     if (!navOpen) {
       setActiveMenu("main");
-      // calcHeight();
-    } else {
-      // setMenuHeight(0);
     }
     setNavOpen(!navOpen);
   }
 
-  const navItems = () => {
-    if (navOpen) {
-      return navJsx[activeMenu];
-    }    
-  }
-
-  // Burger onClick
-  // Run add links 
-  // Set height based on number of links * linkSize
-  // Run add class function
-  // Add links from activeMenu
-  // If activeMenu === "main" { add css dropdown class }
-
-  // const openNavItems = () => {
-  //   const navMenuItems = Object.values(navJsx);
-
-  //   return (
-  //     navMenuItems.map((menuName) => {
-  //       return (
-  //         <CSSTransition classNames={navTransition} in={navOpen && navJsx[activeMenu] === menuName} onEnter={calcHeight}  timeout={500} unmountOnExit >
-  //           <div className={styles.navLinkBar} id="transitionEl" style={{height: menuHeight}}>
-  //             <ul>
-  //               {navJsx[activeMenu]}
-  //             </ul>
-  //           </div>
-  //         </CSSTransition>
-  //       )
-  //     })
-  //   )
-  // }
+  const backArrow = activeMenu === "main" ? "" : (
+    <div className={styles.arrowCont} onClick={() => setActiveMenu("main")}>
+      <span className={styles.navArrow} >
+        <FontAwesomeIcon icon={faAngleLeft}/>
+      </span>
+    </div>
+  );
 
   return (
     <>
       <nav className={styles.navbar}>
-        <img src={gcnNavTop} alt="GCN Nav Top"></img>
+        <Link to={"/"}>
+          <img src={gcnNavTop} alt="GCN Nav Top"></img>
+        </Link>
         <div className={styles.navSecondary}>
-          <div onClick={() => toggleNavLinks()} className={`${styles.burgerIcon}`}>
+          <div onClick={() => toggleNavOpen()} className={`${styles.burgerIcon}`}>
             <span className={styles[navIconAnim]}></span>
             <span className={styles[navIconAnim]}></span>
             <span className={styles[navIconAnim]}></span>
@@ -164,26 +141,15 @@ const calcHeight = () => {
         </div>
          <CSSTransition classNames={navTransition} in={navOpen} timeout={500} unmountOnExit >
           <div className={styles.navLinkBar} style={{height: menuHeight}}>
+              {backArrow}
             <ul>
               {navJsx[activeMenu]}
             </ul>
           </div>
         </CSSTransition>
-        {/* {openNavItems()} */}
       </nav>
     </>
   );
 };
 
 export default Navbar;
-
-
-// {/* <CSSTransition classNames={navTransition} in={navOpen} onEnter={calcHeight} timeout={500} unmountOnExit >
-// <div className={styles.navLinkBar} style={{height: menuHeight}}>
-//   <ul>
-//     {navJsx[activeMenu]}
-//     {/* {navItems()} */}
-//       {/* {handleLinks} */}
-//   </ul>
-// </div>
-// </CSSTransition> */}

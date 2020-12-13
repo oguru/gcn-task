@@ -1,6 +1,15 @@
 @import "./variables.scss";
 
+.pageBody {
+    position: relative;
+    padding-bottom: 48px;
+
+    .searchBar {
+        width: 100%;
+    }
+}
+
 .dashBoard {
-    background-color: black;
+    // background-color: black;
     // height: 500px;
 }
