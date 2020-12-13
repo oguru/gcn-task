@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+
+.iconBackground {
+    align-items: center;
+    background-color: white;
+    border-radius: $base-spacing/2;
+    color: black;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    margin: 0 4px;
+    width: 30px;
+    transition: 200ms;
+
+    &:hover {
+    background-color: $primary-color;
+    }
+
+    .mediaIcon {
+        font-size: 20px;
+    }
+}

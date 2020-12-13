@@ -29,19 +29,14 @@ const Navbar = (props) => {
     calcHeight();
   }, [activeMenu, navOpen]);
 
-//  const calcHeight = (el) => {
-//    const height = el.offsetHeight;
-//    setMenuHeight(height);
-//  }
-
-const calcHeight = () => {
-  const navItems = Object.keys(navJsx[activeMenu]);
-  console.log(navItems);
-  if (navItems) {
-    const totalHeight = navItems.length * 30;
-    setMenuHeight(totalHeight)
+  const calcHeight = () => {
+    const navItems = Object.keys(navJsx[activeMenu]);
+    console.log(navItems);
+    if (navItems) {
+      const totalHeight = navItems.length * 30;
+      setMenuHeight(totalHeight)
+    }
   }
-}
 
   const navIconAnim = navOpen ? "navCross" : "";
 
@@ -96,10 +91,9 @@ const calcHeight = () => {
       );
     }
     return (
-      <li className={styles.navItemCont}>
+      <li className={styles.navItemCont} onClick={() => setNavOpen(false)}>
         <Link
-          className={styles.navItem}
-          onClick={() => setNavOpen(false)}
+          className={styles.navItem}          
           key={link.name}
           // getProps={isActive}
           to={link.path}

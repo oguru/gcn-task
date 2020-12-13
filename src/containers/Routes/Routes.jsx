@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Routes.module.scss";
 import routeAnimStyles from "./RouteAnim.module.scss";
-import { Router, Location } from '@reach/router';
+import { Router, Location, Redirect } from '@reach/router';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import archiveImg from "../../assets/Archive.png";
 import askGcnImg from "../../assets/AskGCN.png";
 import homeImg from "../../assets/Home.png";
 import conorDImg from "../../assets/ConorD.png";
@@ -17,7 +18,6 @@ import manonLImg from "../../assets/ManonL.png";
 import oliverBImg from "../../assets/OliverB.png";
 import presentersImg from "../../assets/Presenters.png";
 import racingImg from "../../assets/Racing.png";
-import searchbarImg from "../../assets/Searchbar.png";
 import simonRImg from "../../assets/SimonR.png";
 import techImg from "../../assets/Tech.png";
 import tomLImg from "../../assets/TomL.png";
@@ -27,6 +27,7 @@ import trainingImg from "../../assets/Training.png";
 const Routes = () => {
 
   const AskGcn = () => <img className={styles.placeholderImg} src={askGcnImg}></img>
+  const Archive = () => <img className={styles.placeholderImg} src={archiveImg}></img>
   const ConorD = () => <img className={styles.placeholderImg} src={conorDImg}></img>
   const DanielL = () => <img className={styles.placeholderImg} src={danielLImg}></img>
   const Features = () => <img className={styles.placeholderImg} src={featuresImg}></img>
@@ -55,24 +56,25 @@ const Routes = () => {
       <TransitionGroup>
         <CSSTransition key={location.key} classNames={routeAnimStyles} timeout={500}>
           <Router>
-            {/* <Redirect noThrow from="/" to="home" /> */}
-            <Home path="/" />
+            <Redirect noThrow from="/" to="/" />
             <AskGcn path="category/ask-gcn" />
+            <Archive path="archives" />
             <ConorD path="presenters/conor-dunne" />
             <DanielL path="presenters/daniel-lloyd" />
             <Features path="category/features" />
+            <GcnShow path="category/gcn-show" />
+            <Home path="/" />
+            <HowTo path="category/how-to" />
             <JamesLW path="presenters/james-lw" />
             <JonC path="presenters/jon-cannings" />
+            <Maintenance path="category/maintenance-mondays" />
             <ManonL path="presenters/manon-lloyd" />
             <OliverB path="presenters/oliver-bridgewood" />
             <Presenters path="presenters" />
-            <SimonR path="presenters/simon-richardson" />
-            <TomL path="presenters/tom-last" />
-            <GcnShow path="category/gcn-show" />
-            <HowTo path="category/how-to" />
-            <Maintenance path="category/maintenance-mondays" />
             <Racing path="category/gcn-racing" />
+            <SimonR path="presenters/simon-richardson" />
             <Tech path="category/gcn-tech" />
+            <TomL path="presenters/tom-last" />
             <Top10s path="category/top-10s" />
             <Training path="category/training" />
           </Router>

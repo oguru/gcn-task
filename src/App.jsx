@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import Navbar from "./containers/Navbar";
 import Footer from "./components/Footer";
 import Searchbar from "./assets/Searchbar.png"
+import { useState } from "react";
 
 function App() {
 
@@ -13,15 +14,17 @@ function App() {
 //        .catch(err => console.log(err));
 //  };
 
+const [footerHeight, setFooterHeight] = useState(0);
+
   return (
-    <div className={styles.pageBody}>
+    <div className={styles.pageBody} style={{paddingBottom: footerHeight}}>
       <Navbar />
       <img className={styles.searchBar} src={Searchbar}></img>
-      <div className={styles.dashBoard}>
+      <div className={styles.dashBoard} >
           <Routes />
         {/* </Routes> */}
       </div>      
-      <Footer />
+      <Footer setFooterHeight={setFooterHeight}/>
     </div>
   );
 }
