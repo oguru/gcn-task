@@ -1,9 +1,9 @@
 # GCN Tech Test
 
 ## Submission Info
-I recreated the navbar to improve the user experience by utilising animation and separating links into categories so that it wouldn't go larger than the full screen height, and to make it easier to understand and navigate.\
+I recreated the navbar to improve the user experience by utilising animation and separating links into categories so that it wouldn't go larger than the full screen height, and to make it easier to understand and navigate.
 
-I also changed the footer so that links are laid out in a clearer way and moved the archives to the main nav bar.\
+I also changed the footer so that links are laid out in a clearer way and moved the archives to the main nav bar.
 
 All links in the main navbar work and display a placeholder image of a screen grab from each relevant page on the GCN site.
 
