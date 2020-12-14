@@ -17,9 +17,16 @@ function App() {
 const [footerHeight, setFooterHeight] = useState(0);
 
   return (
-    <div className={styles.pageBody} style={{paddingBottom: footerHeight}}>
+    <div 
+      className={styles.pageBody} 
+      style={{paddingBottom: footerHeight}}
+    >
       <Navbar />
-      <img className={styles.searchBar} src={Searchbar}></img>
+      <img
+        alt="Searchbar placeholder"
+        className={styles.searchBar} 
+        src={Searchbar}
+      />
       <div className={styles.dashBoard} >
           <Routes />
         {/* </Routes> */}

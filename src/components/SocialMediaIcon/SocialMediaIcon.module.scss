@@ -1,10 +1,9 @@
 @import "../../variables.scss";
 
-.iconBackground {
+.mediaIconCont {
     align-items: center;
-    background-color: white;
     border-radius: $base-spacing/2;
-    color: black;
+    color: white;
     display: flex;
     height: 30px;
     justify-content: center;
@@ -13,10 +12,25 @@
     transition: 200ms;
 
     &:hover {
-    background-color: $primary-color;
+        background-color: $primary-color;
     }
 
     .mediaIcon {
         font-size: 20px;
     }
+}
+
+.navIcon {
+    height: 25px;
+    width: 25px;
+
+    .mediaIcon {
+        font-size: 15px;
+    }
+
+}
+
+.footerIcon {
+    background-color: white;
+    color: black;
 }

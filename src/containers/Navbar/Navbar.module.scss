@@ -32,8 +32,9 @@
         align-items: center;
         background-color: black;
         // color: white;
-        // display: flex;
+        display: flex;
         height: 36px;
+        justify-content: space-between;
         // margin-bottom: 36px;
         padding: $base-spacing/2 $base-spacing;
         position: relative;
@@ -47,7 +48,7 @@
             height: 15px;
             // padding-bottom: $base-spacing;
             position: relative;
-            top: $base-spacing*.75;
+            // top: $base-spacing*.75;
             width: 20px;
             
             span {
@@ -71,6 +72,7 @@
             }
 
             span.navCross:nth-child(1) {
+                height: 3px;
                 top: 7.5px;
                 transform: rotate(135deg);
             }
@@ -81,11 +83,16 @@
             }
 
             span.navCross:nth-child(3) {
+                height: 3px;
                 top: 7.5px;
                 transform: rotate(-135deg);
             }
         }
 
+        .socialMediaIcons {
+            display: flex;
+            // width: 100px;
+        }
     }
 
     .navLinkBar {
@@ -122,32 +129,6 @@
 
         ul {
             flex-grow: 1;
-        }
-
-        .navItemCont {    
-            cursor: pointer;
-            display: flex;
-            flex-grow: 1;
-            height: 30px;
-            line-height: 28px;
-            justify-content: space-between;
-            padding: 0 $base-spacing;
-            transition-duration: 200ms;
-            width: 100%;
-
-            // .arrowRight {
-            //     color: white;
-            //     @include arrowStyle
-            // }
-
-            &:hover {
-                background-color: $primary-color;
-            }
-
-            .navItem {
-                color: white;
-                text-decoration: none;
-            }
         }
     }
 

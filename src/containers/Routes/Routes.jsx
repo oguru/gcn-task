@@ -26,26 +26,126 @@ import trainingImg from "../../assets/Training.png";
 
 const Routes = () => {
 
-  const AskGcn = () => <img className={styles.placeholderImg} src={askGcnImg}></img>
-  const Archive = () => <img className={styles.placeholderImg} src={archiveImg}></img>
-  const ConorD = () => <img className={styles.placeholderImg} src={conorDImg}></img>
-  const DanielL = () => <img className={styles.placeholderImg} src={danielLImg}></img>
-  const Features = () => <img className={styles.placeholderImg} src={featuresImg}></img>
-  const GcnShow = () => <img className={styles.placeholderImg} src={gcnShowImg}></img>
-  const Home = () => <img className={styles.placeholderImg} src={homeImg}></img>
-  const HowTo = () => <img className={styles.placeholderImg} src={howToImg}></img>
-  const JamesLW = () => <img className={styles.placeholderImg} src={jamesLWImg}></img>
-  const JonC = () => <img className={styles.placeholderImg} src={jonCImg}></img>
-  const Maintenance = () => <img className={styles.placeholderImg} src={maintenanceImg}></img>
-  const ManonL = () => <img className={styles.placeholderImg} src={manonLImg}></img>
-  const OliverB = () => <img className={styles.placeholderImg} src={oliverBImg}></img>
-  const Presenters = () => <img className={styles.placeholderImg} src={presentersImg}></img>
-  const Racing = () => <img className={styles.placeholderImg} src={racingImg}></img>
-  const SimonR = () => <img className={styles.placeholderImg} src={simonRImg}></img>
-  const Tech = () => <img className={styles.placeholderImg} src={techImg}></img>
-  const TomL = () => <img className={styles.placeholderImg} src={tomLImg}></img>
-  const Top10s = () => <img className={styles.placeholderImg} src={top10sImg}></img>
-  const Training = () => <img className={styles.placeholderImg} src={trainingImg}></img>
+  const AskGcn = () => 
+    <img
+      alt="Ask GCN page placeholder"
+      className={styles.placeholderImg} 
+      src={askGcnImg}
+    />
+  const Archive = () => 
+    <img 
+      alt="Archive page placeholder"
+      className={styles.placeholderImg} 
+      src={archiveImg}
+    />
+  const ConorD = () => 
+    <img 
+      alt="Conor D page placeholder"
+      className={styles.placeholderImg} 
+      src={conorDImg}
+    />
+  const DanielL = () => 
+    <img 
+      alt="Daniel L page placeholder"
+      className={styles.placeholderImg} 
+      src={danielLImg}
+    />
+  const Features = () => 
+    <img 
+      alt="Features page placeholder"
+      className={styles.placeholderImg} 
+      src={featuresImg}
+    />
+  const GcnShow = () => 
+    <img 
+      alt="GCN show page placeholder"
+      className={styles.placeholderImg} 
+      src={gcnShowImg}
+    />
+  const Home = () => 
+    <img 
+      alt="Home page placeholder"
+      className={styles.placeholderImg} 
+      src={homeImg}
+      />
+  const HowTo = () => 
+    <img 
+      alt="How to page placeholder"
+      className={styles.placeholderImg} 
+      src={howToImg}
+    />
+  const JamesLW = () => 
+    <img 
+      alt="James LW page placeholder"
+      className={styles.placeholderImg} 
+      src={jamesLWImg}
+    />
+  const JonC = () => 
+    <img 
+      alt="Jon C page placeholder"
+      className={styles.placeholderImg} 
+      src={jonCImg}
+    />
+  const Maintenance = () => 
+    <img 
+      alt="Maintenance page placeholder"
+      className={styles.placeholderImg} 
+      src={maintenanceImg}
+    />
+  const ManonL = () => 
+    <img 
+      alt="Manon L page placeholder"
+      className={styles.placeholderImg} 
+      src={manonLImg}
+    />
+  const OliverB = () => 
+    <img 
+      alt="Oliver B page placeholder"
+      className={styles.placeholderImg} 
+      src={oliverBImg}
+    />
+  const Presenters = () => 
+    <img 
+      alt="Presenters page placeholder"
+      className={styles.placeholderImg} 
+      src={presentersImg}
+    />
+  const Racing = () => 
+    <img 
+      alt="GCN racing page placeholder"
+      className={styles.placeholderImg} 
+      src={racingImg}
+    />
+  const SimonR = () => 
+    <img 
+      alt="Simon R page placeholder"
+      className={styles.placeholderImg} 
+      src={simonRImg}
+    />
+  const Tech = () => 
+    <img 
+      alt="Tech page placeholder"
+      className={styles.placeholderImg} 
+      src={techImg}
+    />
+  const TomL = () => 
+  <img 
+    alt="Tom L page placeholder"
+    className={styles.placeholderImg} 
+    src={tomLImg}
+    />
+  const Top10s = () => 
+    <img 
+      alt="Top 10s page placeholder"
+      className={styles.placeholderImg} 
+      src={top10sImg}
+    />
+  const Training = () => 
+    <img 
+      alt="Training page placeholder"
+      className={styles.placeholderImg} 
+      src={trainingImg}
+    />
 
 
 

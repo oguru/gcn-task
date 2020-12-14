@@ -2,34 +2,50 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "@reach/router";
 import styles from "./Footer.module.scss";
 import gcnLogo from "../../assets/GCNLogo.svg";
-import gcnLogoTxt from "../../assets/GCNLogoTxt.svg";
 import SocialMediaIcon from "../SocialMediaIcon";
 
 const Footer = (props) => {
 const {setFooterHeight} = props;
+const inputRef = useRef(null);
 
-  const inputRef = useRef(null);
-  useEffect(() => {
-    const height = inputRef.current.offsetHeight;
-    setFooterHeight(height);
-  }, [inputRef]);
+useEffect(() => {
+  const height = inputRef.current.offsetHeight;
+  setFooterHeight(height);
+}, [inputRef, setFooterHeight]);
 
   return (
     <>
-      <footer ref={inputRef} className={styles.footer}>
+      <footer 
+        ref={inputRef} 
+        className={styles.footer}
+      >
         <div className={styles.footerTop}>
           <Link to={"/"}>
-            <img className={styles.gcnLogo} src={gcnLogo} alt="GCN Logo"/>
+            <img 
+              alt="GCN Logo" 
+              className={styles.gcnLogo} 
+              src={gcnLogo}
+            />
           </Link>
           <div className={styles.socialMediaIcons}>
-            <SocialMediaIcon box={true} icon="facebook" link="https://www.facebook.com/globalcyclingnetwork" />
-            <SocialMediaIcon box={true} icon="twitter" link="https://twitter.com/gcntweet" />
-            <SocialMediaIcon box={true} icon="instagram" link="https://www.instagram.com/globalcyclingnetwork/?hl=en"/>
+            <SocialMediaIcon 
+              isPrimary={false} 
+              icon="facebook" 
+              link="https://www.facebook.com/globalcyclingnetwork" 
+            />
+            <SocialMediaIcon 
+              isPrimary={false} 
+              icon="twitter" 
+              link="https://twitter.com/gcntweet" 
+            />
+            <SocialMediaIcon 
+              isPrimary={false} 
+              icon="instagram" 
+              link="https://www.instagram.com/globalcyclingnetwork/?hl=en"
+            />
           </div>
         </div>
         <div className={styles.footerBot}>
-          {/* <Link to>
-          </Link> */}
           <div className={styles.footerLinks}>
             <div className={styles.footerCol}>
               <p>Editorial Policy</p>

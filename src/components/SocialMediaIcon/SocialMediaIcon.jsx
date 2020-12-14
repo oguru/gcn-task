@@ -7,7 +7,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
 const SocialMediaIcon = (props) => {
-  const {box, icon, link} = props;
+  const {isPrimary, icon, link} = props;
 
   // let currentIcon;
 
@@ -22,7 +22,7 @@ const SocialMediaIcon = (props) => {
     }
   }
 
-  const mediaIconStyle = box ? `${styles.iconBackground}` : "";
+  const mediaIconStyle = isPrimary ? `${styles.mediaIconCont} ${styles.navIcon}` : `${styles.mediaIconCont} ${styles.footerIcon}`;
 
   return (
     <>

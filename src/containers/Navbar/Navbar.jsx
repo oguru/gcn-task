@@ -2,25 +2,21 @@ import React, { useEffect, useState } from "react";
 import { Link } from "@reach/router";
 import styles from "./Navbar.module.scss";
 import navTransition from "./NavTransition.module.scss";
+import SocialMediaIcon from "../../components/SocialMediaIcon";
 import { CSSTransition } from "react-transition-group";
 import NavItem from "../../components/NavItem";
-import PropTypes from 'prop-types';
-import gcnNavTop from "../../assets/GCNNavTop.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import gcnNavTop from "../../assets/GCNNavTop.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = (props) => {
-
-  // const [navLinkVisibility, toggleNavOpen] = useState(false);
+const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(0);
   const [navOpen, setNavOpen] = useState(false);
   const [navJsx, setNavJsx] = useState({"main": 0});
-  // const [navSublinks, setNavSublinks] = useState({"main": 1})
 
   useEffect(() => {
-    const mainLinks = navMainLinks.map((link, index) => getLinks(link, index));
+    const mainLinks = navMainLinks.map((link) => getLinks(link));
     setNavJsx({main: mainLinks});
     navMainLinks.forEach(link => getSubLinks(link));
  }, []);
@@ -31,10 +27,9 @@ const Navbar = (props) => {
 
   const calcHeight = () => {
     const navItems = Object.keys(navJsx[activeMenu]);
-    console.log(navItems);
     if (navItems) {
-      const totalHeight = navItems.length * 30;
-      setMenuHeight(totalHeight)
+      const totalHeight = navItems.length * 30 + 1;
+      setMenuHeight(totalHeight);
     }
   }
 
@@ -53,7 +48,7 @@ const Navbar = (props) => {
       { name: "GCN Tech", path: "../category/gcn-tech" }
     ] },
     { name: "Presenters", childLinks: [
-      {name: "About", path: "../presenters"},
+      { name: "About", path: "../presenters"},
       { name: "Conor Dunne", path: "../presenters/conor-dunne" },
       { name: "Daniel Lloyd", path: "../presenters/daniel-lloyd" },
       { name: "James Lowsley-Williams", path: "../presenters/james-lw" },
@@ -68,40 +63,37 @@ const Navbar = (props) => {
 
   const changeNav = (menuName) => {
     setActiveMenu(menuName.split(" ").join(""));
-    // setMenuHeight("");
-    // calcHeight();
   }
 
   const getSubLinks = (link) => {
     if (link.hasOwnProperty('childLinks')) {
-      const subLinks = link.childLinks.map(subLink => getLinks(subLink));
-      setNavJsx(navData => ({...navData, [link.name.split(" ").join("")]: subLinks}));
+      const subLinks = 
+        link.childLinks.map(subLink => getLinks(subLink));
+      setNavJsx
+        (navData => ({...navData, [link.name.split(" ").join("")]: subLinks}));
     };
   }
 
-  const getLinks = (link, index) => {
+  const getLinks = (link) => {
     if (link.hasOwnProperty('childLinks')) {
       return (
-        <li onClick={() => changeNav(link.name)} className={styles.navItemCont}>
-          <p className={styles.navItem}>{link.name}</p>
-          <span className={styles.navArrow}>
-            <FontAwesomeIcon icon={faAngleRight}/>
-          </span>
-        </li>
+        <NavItem 
+          handleClick={() => changeNav(link.name)}
+          hasChildren={true}
+          key={link.name}
+          name={link.name}
+          path={link.path}
+        />
       );
     }
     return (
-      <li className={styles.navItemCont} onClick={() => setNavOpen(false)}>
-        <Link
-          className={styles.navItem}          
-          key={link.name}
-          // getProps={isActive}
-          to={link.path}
-        >
-          {link.name}
-        </Link>
-        {/* <NavItem name={link.name} index={index} path={link.path} /> */}
-      </li>
+      <NavItem 
+        handleClick={() => setNavOpen(false)}
+        hasChildren={false}
+        key={link.name}
+        name={link.name}
+        path={link.path}
+      />
     );
   };
 
@@ -113,7 +105,10 @@ const Navbar = (props) => {
   }
 
   const backArrow = activeMenu === "main" ? "" : (
-    <div className={styles.arrowCont} onClick={() => setActiveMenu("main")}>
+    <div 
+      className={styles.arrowCont} 
+      onClick={() => setActiveMenu("main")}
+    >
       <span className={styles.navArrow} >
         <FontAwesomeIcon icon={faAngleLeft}/>
       </span>
@@ -124,18 +119,47 @@ const Navbar = (props) => {
     <>
       <nav className={styles.navbar}>
         <Link to={"/"}>
-          <img src={gcnNavTop} alt="GCN Nav Top"></img>
+          <img 
+            alt="GCN Nav Top"
+            src={gcnNavTop} />
         </Link>
         <div className={styles.navSecondary}>
-          <div onClick={() => toggleNavOpen()} className={`${styles.burgerIcon}`}>
+          <div 
+            onClick={() => toggleNavOpen()} 
+            className={`${styles.burgerIcon}`}
+          >
             <span className={styles[navIconAnim]}></span>
             <span className={styles[navIconAnim]}></span>
             <span className={styles[navIconAnim]}></span>
           </div>
+          <div className={styles.socialMediaIcons}>
+            <SocialMediaIcon 
+              icon="facebook" 
+              isPrimary={true}
+              link="https://www.facebook.com/globalcyclingnetwork" 
+            />
+            <SocialMediaIcon 
+              icon="twitter" 
+              isPrimary={true}
+              link="https://twitter.com/gcntweet" 
+            />
+            <SocialMediaIcon
+              icon="instagram" 
+              isPrimary={true}
+              link="https://www.instagram.com/globalcyclingnetwork/?hl=en"
+            />
+          </div>
         </div>
-         <CSSTransition classNames={navTransition} in={navOpen} timeout={500} unmountOnExit >
-          <div className={styles.navLinkBar} style={{height: menuHeight}}>
-              {backArrow}
+        <CSSTransition classNames={navTransition} 
+          in={navOpen} 
+          timeout={500} 
+          unmountOnExit 
+        >
+          <div 
+            className={styles.navLinkBar} 
+            style={{height: menuHeight}}
+          >
+            {backArrow}
             <ul>
               {navJsx[activeMenu]}
             </ul>

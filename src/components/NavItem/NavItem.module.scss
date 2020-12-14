@@ -1,8 +1,36 @@
-.navItem {
+@import "../../variables.scss";
+
+.navItemCont {
+    border-top: solid 1px rgba(255,255,255,0.3);
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1;
+    height: 30px;
+    line-height: 28px;
+    justify-content: space-between;
+    padding: 0 $base-spacing;
+    transition-duration: 200ms;
     width: 100%;
-    color: white;
-  
-    a {
+
+    &:hover {
+        background-color: $primary-color;
+    }
+
+    .navArrow {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: $base-spacing;
+        height: 30px;
+
+        svg {
+           height: 20px;
+           width: 20px; 
+        }
+    }
+
+    .navItem {
         color: white;
         text-decoration: none;
     }
