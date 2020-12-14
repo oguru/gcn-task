@@ -1,4 +1,4 @@
-# GCN Tech Test
+# GCN Tech Test (mobile only)
 
 ## Submission Info
 I recreated the navbar to improve the user experience by utilising animation and separating links into categories so that it wouldn't go larger than the full screen height, and to make it easier to understand and navigate.
