@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMediaIcon tests should match the snapshot 1`] = `ReactWrapper {}`;
+
+exports[`SocialMediaIcon tests should match the snapshot 2`] = `ReactWrapper {}`;

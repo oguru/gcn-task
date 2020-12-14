@@ -1,8 +1,8 @@
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Router, Location } from '@reach/router';
 import React from "react";
 import styles from "./Routes.module.scss";
 import routeAnimStyles from "./RouteAnim.module.scss";
-import { Router, Location, Redirect } from '@reach/router';
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import archiveImg from "../../assets/Archive.png";
 import askGcnImg from "../../assets/AskGCN.png";
 import homeImg from "../../assets/Home.png";
@@ -31,121 +31,121 @@ const Routes = () => {
       alt="Ask GCN page placeholder"
       className={styles.placeholderImg} 
       src={askGcnImg}
-    />
+    />;
   const Archive = () => 
     <img 
       alt="Archive page placeholder"
       className={styles.placeholderImg} 
       src={archiveImg}
-    />
+    />;
   const ConorD = () => 
     <img 
       alt="Conor D page placeholder"
       className={styles.placeholderImg} 
       src={conorDImg}
-    />
+    />;
   const DanielL = () => 
     <img 
       alt="Daniel L page placeholder"
       className={styles.placeholderImg} 
       src={danielLImg}
-    />
+    />;
   const Features = () => 
     <img 
       alt="Features page placeholder"
       className={styles.placeholderImg} 
       src={featuresImg}
-    />
+    />;
   const GcnShow = () => 
     <img 
       alt="GCN show page placeholder"
       className={styles.placeholderImg} 
       src={gcnShowImg}
-    />
+    />;
   const Home = () => 
     <img 
       alt="Home page placeholder"
       className={styles.placeholderImg} 
       src={homeImg}
-      />
+      />;
   const HowTo = () => 
     <img 
       alt="How to page placeholder"
       className={styles.placeholderImg} 
       src={howToImg}
-    />
+    />;
   const JamesLW = () => 
     <img 
       alt="James LW page placeholder"
       className={styles.placeholderImg} 
       src={jamesLWImg}
-    />
+    />;
   const JonC = () => 
     <img 
       alt="Jon C page placeholder"
       className={styles.placeholderImg} 
       src={jonCImg}
-    />
+    />;
   const Maintenance = () => 
     <img 
       alt="Maintenance page placeholder"
       className={styles.placeholderImg} 
       src={maintenanceImg}
-    />
+    />;
   const ManonL = () => 
     <img 
       alt="Manon L page placeholder"
       className={styles.placeholderImg} 
       src={manonLImg}
-    />
+    />;
   const OliverB = () => 
     <img 
       alt="Oliver B page placeholder"
       className={styles.placeholderImg} 
       src={oliverBImg}
-    />
+    />;
   const Presenters = () => 
     <img 
       alt="Presenters page placeholder"
       className={styles.placeholderImg} 
       src={presentersImg}
-    />
+    />;
   const Racing = () => 
     <img 
       alt="GCN racing page placeholder"
       className={styles.placeholderImg} 
       src={racingImg}
-    />
+    />;
   const SimonR = () => 
     <img 
       alt="Simon R page placeholder"
       className={styles.placeholderImg} 
       src={simonRImg}
-    />
+    />;
   const Tech = () => 
     <img 
       alt="Tech page placeholder"
       className={styles.placeholderImg} 
       src={techImg}
-    />
+    />;
   const TomL = () => 
   <img 
     alt="Tom L page placeholder"
     className={styles.placeholderImg} 
     src={tomLImg}
-    />
+    />;
   const Top10s = () => 
     <img 
       alt="Top 10s page placeholder"
       className={styles.placeholderImg} 
       src={top10sImg}
-    />
+    />;
   const Training = () => 
     <img 
       alt="Training page placeholder"
       className={styles.placeholderImg} 
       src={trainingImg}
-    />
+    />;
 
 
 
@@ -154,9 +154,12 @@ const Routes = () => {
     <Location>
       {({ location }) => (
       <TransitionGroup>
-        <CSSTransition key={location.key} classNames={routeAnimStyles} timeout={500}>
+        <CSSTransition 
+          classNames={routeAnimStyles} 
+          key={location.key} 
+          timeout={500}
+        >
           <Router>
-            <Redirect noThrow from="/" to="/" />
             <AskGcn path="category/ask-gcn" />
             <Archive path="archives" />
             <ConorD path="presenters/conor-dunne" />

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "@reach/router";
-import styles from "./Navbar.module.scss";
-import navTransition from "./NavTransition.module.scss";
-import SocialMediaIcon from "../../components/SocialMediaIcon";
 import { CSSTransition } from "react-transition-group";
-import NavItem from "../../components/NavItem";
-import gcnNavTop from "../../assets/GCNNavTop.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from "@reach/router";
+import NavItem from "../../components/NavItem";
+import React, { useEffect, useState } from "react";
+import SocialMediaIcon from "../../components/SocialMediaIcon";
+import gcnNavTop from "../../assets/GCNNavTop.png";
+import navTransition from "./NavTransition.module.scss";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("main");
@@ -16,7 +16,8 @@ const Navbar = () => {
   const [navJsx, setNavJsx] = useState({"main": 0});
 
   useEffect(() => {
-    const mainLinks = navMainLinks.map((link) => getLinks(link));
+    const mainLinks = 
+      navMainLinks.map((link) => getLinks(link));
     setNavJsx({main: mainLinks});
     navMainLinks.forEach(link => getSubLinks(link));
  }, []);
@@ -38,14 +39,14 @@ const Navbar = () => {
   const navMainLinks = [
     { name: "GCN Channels", childLinks: [
       { name: "GCN Show", path: "../category/gcn-show" },
+      { name: "Ask GCN", path: "../category/ask-gcn" },
+      { name: "Features", path: "../category/features" },
+      { name: "GCN Racing", path: "../category/gcn-racing" },
+      { name: "GCN Tech", path: "../category/gcn-tech" },
       { name: "How To", path: "../category/how-to" },
       { name: "Maintenance", path: "../category/maintenance-mondays" },
-      { name: "Ask GCN", path: "../category/ask-gcn" },
-      { name: "Training", path: "../category/training" },
-      { name: "Features", path: "../category/features" },
       { name: "Top 10s", path: "../category/top-10s" },
-      { name: "GCN Racing", path: "../category/gcn-racing" },
-      { name: "GCN Tech", path: "../category/gcn-tech" }
+      { name: "Training", path: "../category/training" }
     ] },
     { name: "Presenters", childLinks: [
       { name: "About", path: "../presenters"},
@@ -125,8 +126,8 @@ const Navbar = () => {
         </Link>
         <div className={styles.navSecondary}>
           <div 
-            onClick={() => toggleNavOpen()} 
             className={`${styles.burgerIcon}`}
+            onClick={() => toggleNavOpen()} 
           >
             <span className={styles[navIconAnim]}></span>
             <span className={styles[navIconAnim]}></span>
@@ -136,16 +137,19 @@ const Navbar = () => {
             <SocialMediaIcon 
               icon="facebook" 
               isPrimary={true}
+              key="facebookn"
               link="https://www.facebook.com/globalcyclingnetwork" 
             />
             <SocialMediaIcon 
               icon="twitter" 
               isPrimary={true}
+              key="twittern"
               link="https://twitter.com/gcntweet" 
             />
             <SocialMediaIcon
               icon="instagram" 
               isPrimary={true}
+              key="instagramn"
               link="https://www.instagram.com/globalcyclingnetwork/?hl=en"
             />
           </div>
@@ -156,7 +160,7 @@ const Navbar = () => {
           unmountOnExit 
         >
           <div 
-            className={styles.navLinkBar} 
+            className={styles.navLinkBar}
             style={{height: menuHeight}}
           >
             {backArrow}

@@ -1,31 +1,27 @@
+@import "../../variables.scss";
+
 .enter {
-    border-top: solid 1px rgba(255,255,255,0.3);
-    // opacity: 0;
+    opacity: 0;
     overflow: hidden;
     transform: translateY(-100%);
 }
 
 .enterActive {
-    transform: translateY(0);
-    // opacity: 1;
+    opacity: 1;
     overflow: hidden;
-    transition-duration: 500ms;
-}
-
-.enterDone {
-    // border-top: solid 1px rgba(255,255,255,0.3);
+    transform: translateY(0);
+    transition-duration: $transition-speed;
 }
 
 .exit {
-    transform: translateY(0);
     opacity: 1;
     overflow: hidden;
-
-    transition: opacity 500ms, transform 500ms;
+    transform: translateY(0);
+    transition: $transition-speed;
 }
 
 .exitActive {
-    // opacity: 0;
+    opacity: 0;
     overflow: hidden;
     transform: translateY(-150%);
 }

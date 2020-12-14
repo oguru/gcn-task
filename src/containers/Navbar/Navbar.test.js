@@ -1,11 +1,14 @@
 import { mount } from "enzyme";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import React from "react";
-import ReactDOM from "react-dom";
 import Navbar from "./Navbar";
 
 describe("Navbar tests", () => {
   let component;
+  
+  beforeEach(() => {
+    component = mount(<Navbar />);
+  });
   
   afterEach(cleanup);
   
@@ -13,24 +16,21 @@ describe("Navbar tests", () => {
     expect(render(<Navbar />)).toBeTruthy();
   });
 
-  beforeEach(() => {
-    component = mount(<Navbar />);
-  });
-
   it("should match the snapshot", () => {
     expect(component).toMatchSnapshot();
   });
 
-  // it("should have a burger menu icon", () => {
-  //   const container = render(<Navbar />);
-  //   // expect(container.firstChild.classList.contains("burgerIcon").toBe(true))
-  //   // expect(container.firstChild).toHaveClass("burger-icon");
-  //   console.log(container.firstChild);
-    
-  // })
-  
-  // const input = get
-});
+  it("should contain a nav tag", () => {
+    expect(component.find("nav").length).toEqual(1);
+  });
 
-// const linkElement = screen.getByText(/burger-icon/i);
-// expect(linkElement).toBeInTheDocument();
+  it("should have a burger menu icon", () => {
+    expect(component.find(".burgerIcon").length).toBe(1);
+  })
+
+  it("should add navbar links when burger menu is clicked", () => {
+    expect(component.find(".navLinkBar").length).toBe(0);
+    component.find(".burgerIcon").simulate("click");
+    expect(component.find(".navLinkBar").length).toBe(1);
+  })
+});

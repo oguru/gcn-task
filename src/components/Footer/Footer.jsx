@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from "react";
 import { Link } from "@reach/router";
-import styles from "./Footer.module.scss";
-import gcnLogo from "../../assets/GCNLogo.svg";
+import React, { useEffect, useRef } from "react";
 import SocialMediaIcon from "../SocialMediaIcon";
+import gcnLogo from "../../assets/GCNLogo.svg";
+import styles from "./Footer.module.scss";
 
 const Footer = (props) => {
 const {setFooterHeight} = props;
+
 const inputRef = useRef(null);
 
 useEffect(() => {
@@ -16,8 +17,8 @@ useEffect(() => {
   return (
     <>
       <footer 
-        ref={inputRef} 
         className={styles.footer}
+        ref={inputRef} 
       >
         <div className={styles.footerTop}>
           <Link to={"/"}>
@@ -28,19 +29,22 @@ useEffect(() => {
             />
           </Link>
           <div className={styles.socialMediaIcons}>
-            <SocialMediaIcon 
+            <SocialMediaIcon
               isPrimary={false} 
-              icon="facebook" 
+              icon="facebook"
+              key="facebookf"
               link="https://www.facebook.com/globalcyclingnetwork" 
             />
             <SocialMediaIcon 
               isPrimary={false} 
               icon="twitter" 
+              key="twitterf"
               link="https://twitter.com/gcntweet" 
             />
             <SocialMediaIcon 
               isPrimary={false} 
               icon="instagram" 
+              key="instagramf"
               link="https://www.instagram.com/globalcyclingnetwork/?hl=en"
             />
           </div>

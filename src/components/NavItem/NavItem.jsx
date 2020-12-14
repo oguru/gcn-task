@@ -1,20 +1,23 @@
-import React from "react";
-import styles from "./NavItem.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import styles from "./NavItem.module.scss";
 
 const NavItem = (props) => {
   const {handleClick, hasChildren, name, path} = props;
 
   if (hasChildren) {
     return (
-      <li onClick={handleClick} className={styles.navItemCont}>
-          <p className={styles.navItem}>{name}</p>
-          <span className={styles.navArrow}>
-            <FontAwesomeIcon icon={faAngleRight}/>
-          </span>
-        </li>
+      <li 
+        onClick={handleClick} 
+        className={styles.navItemCont}
+      >
+        <p className={styles.navItem}>{name}</p>
+        <span className={styles.navArrow}>
+          <FontAwesomeIcon icon={faAngleRight}/>
+        </span>
+      </li>
     )
   }
 
@@ -26,7 +29,6 @@ const NavItem = (props) => {
       <Link
         className={styles.navItem}          
         key={name}
-        // getProps={isActive}
         to={path}
       >
         {name}

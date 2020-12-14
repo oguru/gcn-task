@@ -1,41 +1,63 @@
 @import "../../variables.scss";
 
-
-
-// nav {
-//     background-color: $primary-color;
-// }
-
 .navbar {
-    // background-color: $primary-color;
-    // display: flex;
-    // height: 90px;
-    // justify-content: space-between;
     width: 100%;
     
     img {
         display: block;
-        // height: 45px;
-        // margin-bottom: 45px;
         position: relative;
         width: 100%;
         z-index: 1000;
     }
 
-    ul {
-        list-style: none;
-        // margin-top: 15px;
-        padding: 0;
+    .navLinkBar {
+        background-color: black;
+        display: flex;
+        position: absolute;
+        transition: $transition-speed ease-in-out;
+        width: 100%;
+
+        ul {
+            flex-grow: 1;
+            list-style: none;
+            padding: 0;
+        }
+
+        .arrowCont {
+            cursor: pointer;
+            height: 100%;
+            padding-right: $base-spacing;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        .navArrow {
+            align-items: center;
+            color: white;
+            display: flex;
+            height: 30px;
+            justify-content: center;
+            margin-left: $base-spacing;
+
+            svg {
+               height: 20px;
+               width: 20px; 
+            }
+        }
+    }
+
+    .navLinksOpen {
+        padding: 0 $base-spacing $base-spacing;        
     }
 
     .navSecondary {
         align-items: center;
         background-color: black;
-        // color: white;
         display: flex;
         height: 36px;
         justify-content: space-between;
-        // margin-bottom: 36px;
         padding: $base-spacing/2 $base-spacing;
         position: relative;
         z-index: 1000;
@@ -46,20 +68,18 @@
             flex-direction: column;
             justify-content: center;
             height: 15px;
-            // padding-bottom: $base-spacing;
             position: relative;
-            // top: $base-spacing*.75;
             width: 20px;
             
             span {
-                transition: $transition-speed ease-in-out;
                 background-color: white;
                 border-radius: $base-spacing;
                 display: block;
-                top: 0;
                 height: 2px;
                 position: absolute;
+                top: 0;
                 transform: rotate(0deg) translate(0px);
+                transition: $transition-speed ease-in-out;
                 width: 20px;
             }
 
@@ -91,48 +111,6 @@
 
         .socialMediaIcons {
             display: flex;
-            // width: 100px;
         }
-    }
-
-    .navLinkBar {
-        background-color: black;
-        display: flex;
-        position: absolute;
-        transition: 500ms ease-in-out;
-        width: 100%;
-
-        .arrowCont {
-            cursor: pointer;
-            height: 100%;
-            padding-right: $base-spacing;
-
-            &:hover {
-                background-color: $primary-color;
-            }
-        }
-
-        .navArrow {
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: $base-spacing;
-            height: 30px;
-            // width: 30px;
-
-            svg {
-               height: 20px;
-               width: 20px; 
-            }
-        }
-
-        ul {
-            flex-grow: 1;
-        }
-    }
-
-    .navLinksOpen {
-        padding: 0 $base-spacing $base-spacing;        
     }
 }
