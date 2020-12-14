@@ -1,6 +1,6 @@
-import React from "react";
+import { cleanup, render } from "@testing-library/react";
 import { mount } from "enzyme";
-import { render, cleanup } from "@testing-library/react";
+import React from "react";
 
 import SocialMediaIcon from "./SocialMediaIcon";
 
