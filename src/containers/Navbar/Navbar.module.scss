@@ -13,6 +13,7 @@
     .navLinkBar {
         background-color: black;
         display: flex;
+        overflow: hidden;
         position: absolute;
         transition: $transition-speed ease-in-out;
         width: 100%;

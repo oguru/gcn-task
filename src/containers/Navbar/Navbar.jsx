@@ -154,7 +154,8 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <CSSTransition classNames={navTransition} 
+        <CSSTransition 
+          classNames={navTransition} 
           in={navOpen} 
           timeout={500} 
           unmountOnExit 

@@ -19,7 +19,7 @@ const [footerHeight, setFooterHeight] = useState(0);
         className={styles.searchBar} 
         src={Searchbar}
       />
-      <div className={styles.dashBoard} >
+      <div>
           <Routes />
       </div>      
       <Footer setFooterHeight={setFooterHeight}/>

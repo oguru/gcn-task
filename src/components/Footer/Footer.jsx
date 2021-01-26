@@ -12,7 +12,7 @@ const inputRef = useRef(null);
 useEffect(() => {
   const height = inputRef.current.offsetHeight;
   setFooterHeight(height);
-}, [inputRef, setFooterHeight]);
+}, [inputRef, setFooterHeight]); //error
 
   return (
     <>
