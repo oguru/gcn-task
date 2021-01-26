@@ -13,3 +13,6 @@ All links in the main navbar work and display a placeholder image of a screen gr
 3 - Run ```yarn start``` in the project directory from the command line .\
 4 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\
 5 - Run ```yarn test``` or ```npm test``` to run Jest tests.
+
+##Link to Live Demo
+https://gcn-task-d9071.firebaseapp.com/
